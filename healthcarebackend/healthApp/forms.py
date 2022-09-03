@@ -2,6 +2,7 @@ from django import forms
 
 # from healthcarebackend.healthApp.models import Patient
 from healthApp.models import Patient
+from healthApp.models import Appointment
 
 
 class PatientLoginForm(forms.Form):
@@ -11,6 +12,11 @@ class PatientLoginForm(forms.Form):
 
 
 class PatientRegisterForm(forms.ModelForm):
-
-    model = Patient
-    include = ["*"]
+    class Meta:
+        model = Patient
+        fields = "__all__"
+   
+class ScheduleAppointmentForm(forms.ModelForm):
+    class Meta:
+        model = Appointment
+        fields = "__all__"

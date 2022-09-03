@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+temp_dir = os.path.join(BASE_DIR,'templates')
+# stat_dir = os.path.join(BASE_DIR,'face_app/static')
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'face_app',
     'healthApp'
 ]
 
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'healthcarebackend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [temp_dir],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
