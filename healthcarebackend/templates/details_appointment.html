@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Appointment Details {% endblock %}
+{% block content %}
+
+<div class="m-4" >
+    <table class="table" style="background-color: #EBECf0;">
+        <thead class="table-dark">
+            <tr>
+                <th>SNO</th>
+                <th>HOSPITAL'S NAME</th>
+              <th>DOCTOR'S NAME</th>
+                <th>LOCATION</th>
+                <th>DATE</th>
+               <th>PAYMENT</th>
+               <th>MODE</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                 {% for order in appointments %}
+                 <tr>
+                     <td>{{forloop.counter}}</td>
+                     <td>{{order.id}}</td>
+                     <td>{{order.name}}</td>
+                     <td>{{order.price|currency}}</td>
+                     <td>{{order.date}}</td>
+                     <td>{{order.labtime}}</td>
+                     <td>{{order.quantity|multiply:order.price|currency}}</td>
+                 </tr>
+
+                 {% endfor %}
+
+             </tbody>
+    </table>
+</div>
+
+{% endblock %}

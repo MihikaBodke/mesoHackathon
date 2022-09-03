@@ -4,13 +4,60 @@ from django.http import HttpResponse
 from .forms import PatientLoginForm
 from django.views import View
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
+from twilio.twiml.messaging_response import MessagingResponse
+from twilio.rest import Client
+# noinspection PyUnresolvedReferences
+# from healthcarebackend.settings import TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
 from .models import Hospital, Patient, Doctor, Appointment, Product, Category, Order
 from django.views.decorators.csrf import csrf_exempt
 
 MERCHANT_KEY = "i4_MxwJOYZ@o4dxe"
 
+order_details = {
+    'amount': '5kg',
+    'item': 'Tomatoes',
+    'date_of_delivery': '03/04/2021',
+    'address': 'No 1, Ciroma Chukwuma Adekunle Street, Ikeja, Lagos'
+}
+# def send_notification(request):
+#     client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
+#     print("HELLO")
+#     if request.method == 'POST':
+#         user_whatsapp_number = request.POST['user_number']
+#
+#         message = client.messages.create(
+#             from_='whatsapp:+14155238886',
+#             body="FUCK OFF MIHIKA",
+#             # body='Your {} order of {} has shipped and should be delivered on {}. Details: {}'.format(
+#             #     order_details['amount'], order_details['item'], order_details['date_of_delivery'],
+#             #     order_details['address']),
+#             to='whatsapp:+{}'.format(user_whatsapp_number)
+#         )
+#
+#         print(user_whatsapp_number)
+#         print(message.sid)
+#         return HttpResponse('Great! Expect a message...')
+#
+#     return render(request, 'sendmsg.html')
+
 def index(request):
-    return HttpResponse("<h1>Hello World!</h1>")
+    return render(request, 'index.html')
+
+def landing(request):
+    return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request,"contactus.html")
+
+def profile(request):
+    return render(request,"profile.html")
+
+def doctor(request):
+    return render(request,"doctor.html")
 
 def patientLogin(request):
     if request.method == "POST":
@@ -23,7 +70,8 @@ def patientLogin(request):
         form = PatientLoginForm()
         return render(request, "", {"form":form})
 
-def getAppointments(request, phoneNo):
+def getAppointments(request):
+    phoneNo = 7777777777
     patient = Patient.objects.get(phoneNo = phoneNo)
     appointments = Appointment.objects.get(patient = patient)
     return HttpResponse(appointments)
@@ -120,11 +168,11 @@ class CheckOut1(View):
             'INDUSTRY_TYPE_ID': 'Retail',
             'WEBSITE': 'WEBSTAGING',
             'CHANNEL_ID': 'WEB',
-            'CALLBACK_URL': 'http://127.0.0.1:8000/shop/handlerequest/',
+            'CALLBACK_URL': 'http://127.0.0.1:8000/handlerequest/',
 
         }
         param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
-        return render(request, 'shop/paytm.html', {'param_dict': param_dict})
+        return render(request, 'paytm.html', {'param_dict': param_dict})
 
 @csrf_exempt
 def handlerequest(request):

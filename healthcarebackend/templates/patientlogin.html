@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}LogIn {% endblock %}
+{% block content %}
+<body class="body_img">
+	<img src="./img/about_bg.png">
+	<div class="mainform" >  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				
+				<form>
+					
+					<label for="chk" aria-hidden="true">Patient Sign up</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<input type="text" class ="ageclass" name="age" placeholder="Age" required="" >
+					<input type="text" name="gender" placeholder="Gender" required="">
+					<input type="text" name="bg" placeholder="Blood Group" required="">
+
+					<input type="text" name="Past Allergies" placeholder="Past allergies" required="">
+					<button class="subbtn">Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Patient Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button class="subbtn">Login</button>
+				</form>
+			</div>
+	</div>
+{% endblock %}

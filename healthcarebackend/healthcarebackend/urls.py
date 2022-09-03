@@ -21,16 +21,22 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.index),
-    path('getAppointments/<str:phoneNo>', getAppointments),
-    path("scheduleAppointment/", scheduleAppointment),
+    path('', index, name = "index"),
+    # path('send/', send_notification),
+    path('getAppointments', getAppointments, name = 'getappointment'),
+    path("scheduleAppointment/", scheduleAppointment, name = 'bookappointment'),
     path('',include('face_app.urls')),
     path('lab1/', lab1, name='lab1'),
     path('lab2/', lab2.as_view(), name='lab2'),
     path('cart/', Cart.as_view(), name='cart'),
     path('checkout/', CheckOut1.as_view(), name='checkout'),
     path('orders/', OrderView.as_view(), name='orders'),
-    # path('checkout/', checkout, name='checkout'),
+    path('handle_request/', handlerequest, name='handlerequest'),
+    path('home/', landing, name='landing'),
+    path('aboutus/', about, name='about'),
+    path('contact/', contact, name='contact'),
+    path('profile/', profile, name='profile'),
+    path('doctor/', doctor, name='doctor'),
 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 

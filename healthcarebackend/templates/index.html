@@ -1,4 +1,277 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home {% endblock %}
 {% block content %}
-hi
+    <section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-xl-5">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h5>We are here for your care</h5>
+                            <h1>Find Your Right Doctor :)</h1>
+                            <p>We at Compact HealthCare believe in providing only the best services to all our clients, be it a Patient, a Doctor, or a Hospital. We are here so that you can work at ease. </p>
+                            <a href="#" class="btn_2">Make an appointment</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="banner_img">
+                        <img src="media/img/background.jpg" alt="" width="3000px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner part start-->
+
+    <!-- about us part start-->
+    <section class="about_us padding_top">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6 col-lg-6">
+                    <div class="about_us_img">
+                        <img src="media/img/aboutimg.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="about_us_text">
+                        <h1 class="about_title">About us</h1><b>
+                        <p class="about_font">We at Compact HealthCare believe in providing only the best services to all our clients, be it a Patient, a Doctor, or a Hospital. We are here so that you can work at ease.</p></b>
+                        <a class="btn_2 " href="#">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about us part end-->
+
+    <div class="row justify-content-center title_padding">
+        <div class="col-xl-8">
+            <div class="section_tittle text-center">
+                <h2>What we Offer</h2>
+            </div>
+        </div>
+    </div>
+    <!-- feature_part start-->
+    <section class="feature_part " >
+        <div class="container " >
+            
+            <div class="row justify-content-between align-items-center our_features">
+                <div class="col-lg-3 col-sm-12" >
+                    <div class="single_feature" >
+                        <div class="single_feature_part" >
+                            <span class="single_feature_icon"><img src="media/img/icon/feature_1.svg" alt=""></span>
+                            <h4>Online Consultation</h4>
+                            <p>We help you connect with Doctors who can provide online consultation when it is not feasible to travel physically.</p>
+                        </div>
+                    </div>
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <span class="single_feature_icon"><img src="media/img/icon/feature_2.svg" alt=""></span>
+                            <h4>Easy Scheduling</h4>
+                            <p>We have tried to make the scheduling process easy with our Appointment Scheduling feature which helps you choose the nearest hospital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                        <div class="single_feature_img">
+                            <img src="media/img/service.png" alt="">
+                        </div>
+                </div>
+                <div class="col-lg-3 col-sm-12">
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <span class="single_feature_icon"><img src="media/img/icon/feature_1.svg" alt=""></span>
+                            <h4>Health Safety</h4>
+                            <p>We want our patients to be healthy and thus we make sure that every patient that enters the hospital is wearing a mask</p>
+                        </div>
+                    </div>
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <span class="single_feature_icon"><img src="media/img/icon/feature_2.svg" alt=""></span>
+                            <h4>Medical History</h4>
+                            <p>The following web application maitains your patient history in Your Profile section thus making it easier for patient as well as the doctor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- feature_part start-->
+
+    
+
+    <!--::doctor_part start::-->
+    <div class="row justify-content-center title_padding">
+        <div class="col-xl-8">
+            <div class="section_tittle text-center">
+                <h2> Experienced Doctors</h2>
+                
+            </div>
+        </div>
+    </div>
+    <section class="doctor_part ">
+        <div class="container">
+           
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="media/img/doctor/doctor_1.png" alt="doctor">
+                            <div class="social_icon">
+                                <ul>
+                                    <li><a href="#"> <i class="ti-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-twitter-alt"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-instagram"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-skype"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>DR Adam Billiard</h3>
+                                <p>Heart specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src=" media/img/doctor/doctor_4.png" alt="doctor">
+                            <div class="social_icon">
+                                <ul>
+                                    <li><a href="#"> <i class="ti-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-twitter-alt"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-instagram"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-skype"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>DR Adam Billiard</h3>
+                                <p>Medicine specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="media/img/doctor/doctor_2.png" alt="doctor">
+                            <div class="social_icon">
+                                <ul>
+                                    <li><a href="#"> <i class="ti-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-twitter-alt"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-instagram"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-skype"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>DR Fred Macyard</h3>
+                                <p>CHeart specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="media/img/doctor/doctor_3.png" alt="doctor">
+                            <div class="social_icon">
+                                <ul>
+                                    <li><a href="#"> <i class="ti-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-twitter-alt"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-instagram"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-skype"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>DR Justin Stuard</h3>
+                                <p>Heart specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <br>
+ <br>
+ <br>
+ <br>
+    <!--::blog_part end::-->
+
+    <div class="row justify-content-center title_padding">
+        <div class="col-xl-8">
+            <div class="section_tittle text-center">
+                <h2> Testimonials by our customers </h2>
+                
+            </div>
+        </div>
+    </div>
+
+    
+
+    <section class="testimonials">
+        <div class="container">
+           
+          <div class="row">
+            <div class="col-sm-12" >
+              <div id="customers-testimonials" class="owl-carousel">
+
+                <!--TESTIMONIAL 1 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="img-circle" src="media/img/t1.jpg" alt="">
+                    <p>Had an amazing experience while using this website, great functionality</p>
+                  </div>
+                    <div class="testimonial-name">Jane Doe</div>
+                </div>
+                <!--END OF TESTIMONIAL 1 -->
+                <!--TESTIMONIAL 2 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="img-circle" src="./img/t2.jpg" alt="">
+                    <p>As a doctor, the website helped me interact with the patients in a better manner </p>
+                  </div>
+                  <div class="testimonial-name">ANNA ITURBE</div>
+                </div>
+                <!--END OF TESTIMONIAL 2 -->
+                <!--TESTIMONIAL 3 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="img-circle" src="./img/t3.jpg" alt="">
+                    <p>This website makes scheduling appointments easier</p>
+                  </div>
+                  <div class="testimonial-name">LARA ATKINSON</div>
+                </div>
+                <!--END OF TESTIMONIAL 3 -->
+                <!--TESTIMONIAL 4 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="img-circle" src="media/img/t4.jpg" alt="">
+                    <p>The clean UI makes it easier to understand</p>
+                  </div>
+                  <div class="testimonial-name">IAN OWEN</div>
+                </div>
+                <!--END OF TESTIMONIAL 4 -->
+             
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+        <!-- END OF TESTIMONIALS -->
 {% endblock %}
+
+
+    

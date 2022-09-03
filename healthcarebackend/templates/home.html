@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home {% endblock %}
+{% block content %}
+<section class = "cardss" style = "background-color: #EBECf0">
+       
+        <div class="main">
+            <ul class="cards">
+              <li class="cards_item">
+                <div class="card">
+                  <div class="card_image"><img src="media/img/schedule.jpg"></div>
+                  <div class="card_content">
+                    <h2 class="card_title">Schedule an Appointment</h2>
+                    
+                    <a href = "{% url 'bookappointment' %}" class="btn_card card_btn">Click Here</a>
+                  </div>
+                </div>
+              </li>
+              <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="media/img/profile.jpg" height="300px;"></div>
+                    <div class="card_content">
+                      <h2 class="card_title">Your<br>Profile</h2>
+                      
+                      <a href="{% url 'profile' %}" class="btn_card card_btn">Click Here</a>
+                    </div>
+                  </div>
+              </li>
+              <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="media/img/list.jpg"></div>
+                    <div class="card_content">
+                      <h2 class="card_title">Appointment <br> List</h2>
+                      
+                      <button class="btn_card card_btn">Click Here</button>
+                    </div>
+                  </div>
+              </li>
+              <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="media/img/lab.jpg"></div>
+                    <div class="card_content">
+                      <h2 class="card_title">Lab<br>Tests</h2>
+                      
+                      <button class="btn_card card_btn">Click Here</button>
+                    </div>
+                  </div>
+              </li>
+              <li class="cards_item">
+                <div class="card">
+                  <div class="card_image"><img_card src="https://picsum.photos/500/300/?image=17"></div>
+                  <div class="card_content">
+                    <h2 class="card_title">Contact <br> Us</h2>
+                   
+                    <a href = "{% url 'bookappointment' %}" class="btn_card card_btn">Click Here</a>
+                  </div>
+                </div>
+              </li>
+              <li class="cards_item">
+                <div class="card">
+                  <div class="card_image"><img_card src="https://picsum.photos/500/300/?image=2"></div>
+                  <div class="card_content">
+                    <h2 class="card_title">Why<br>Us?</h2>
+                    
+                    <button class="btn_card card_btn">Click Here</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+
+    </section>
+{% endblock %}
