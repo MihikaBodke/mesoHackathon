@@ -7,7 +7,7 @@ from django.contrib import messages
 from .models import Hospital, Patient, Doctor, Appointment, Product, Category, Order
 from django.views.decorators.csrf import csrf_exempt
 
-
+MERCHANT_KEY = "i4_MxwJOYZ@o4dxe"
 
 def index(request):
     return HttpResponse("<h1>Hello World!</h1>")
@@ -113,7 +113,7 @@ class CheckOut1(View):
         request.session['cart'] = {}
         param_dict = {
 
-            'MID': 'xkqTxA35416233451809',
+            'MID': 'nVKXUm57274101057469',
             'ORDER_ID': str(order.id),
             'TXN_AMOUNT': str(amount),
             'CUST_ID': email,
