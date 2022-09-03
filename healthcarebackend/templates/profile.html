@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Profile {% endblock %}
-<html>
-<head>
-  
-</head>
- <body> 
+{% block content %}
+
     <div class="container"> 
         <div class="main"> 
             <div class="topbar"> 
@@ -16,7 +13,7 @@
                 <div class="col-md-4 mt-1"> 
                     <div class="card text-center sidebar"> 
                         <div class="card-body">
-                            <img src="media/img/userprof.JPG" class="rounded-circle" width="150" >
+                            <img src="{% static 'img/userprof.jpg' %}" class="rounded-circle" width="150" >
                             <div class="mt-3">
                                 <h2><u>Jane Doe</u></h2> <br>
                                 <p>Jane doe is 25 years old, here are her vaccination details as follows</p>
@@ -98,7 +95,5 @@
         </div>
     </div>
 </div>
-        
-</body> 
-</html>
+
 {% endblock %}

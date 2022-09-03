@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="banner_img">
-                        <img src="media/img/background.jpg" alt="" width="3000px;">
+                        <img src="{% static 'img/background.jpg' %}" alt="" width="3000px;">
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-6 col-lg-6">
                     <div class="about_us_img">
-                        <img src="media/img/aboutimg.jpg" alt="">
+                        <img src="{% static 'img/aboutimg.jpg' %}" alt="">
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-5">
@@ -62,14 +62,14 @@
                 <div class="col-lg-3 col-sm-12" >
                     <div class="single_feature" >
                         <div class="single_feature_part" >
-                            <span class="single_feature_icon"><img src="media/img/icon/feature_1.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="{% static 'img/icon/feature_1.svg' %}" alt=""></span>
                             <h4>Online Consultation</h4>
                             <p>We help you connect with Doctors who can provide online consultation when it is not feasible to travel physically.</p>
                         </div>
                     </div>
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <span class="single_feature_icon"><img src="media/img/icon/feature_2.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="{% static 'img/icon/feature_2.svg' %}" alt=""></span>
                             <h4>Easy Scheduling</h4>
                             <p>We have tried to make the scheduling process easy with our Appointment Scheduling feature which helps you choose the nearest hospital</p>
                         </div>
@@ -77,20 +77,20 @@
                 </div>
                 <div class="col-lg-4 col-sm-12">
                         <div class="single_feature_img">
-                            <img src="media/img/service.png" alt="">
+                            <img src="{% static 'img/service.png' %}" alt="">
                         </div>
                 </div>
                 <div class="col-lg-3 col-sm-12">
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <span class="single_feature_icon"><img src="media/img/icon/feature_1.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="{% static 'img/icon/feature_1.svg' %}" alt=""></span>
                             <h4>Health Safety</h4>
                             <p>We want our patients to be healthy and thus we make sure that every patient that enters the hospital is wearing a mask</p>
                         </div>
                     </div>
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <span class="single_feature_icon"><img src="media/img/icon/feature_2.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="{% static 'img/icon/feature_2.svg' %}" alt=""></span>
                             <h4>Medical History</h4>
                             <p>The following web application maitains your patient history in Your Profile section thus making it easier for patient as well as the doctor</p>
                         </div>
@@ -119,7 +119,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                            <img src="media/img/doctor/doctor_1.png" alt="doctor">
+                            <img src="{% static 'img/doctor/doctor_1.png' %}" alt="doctor">
                             <div class="social_icon">
                                 <ul>
                                     <li><a href="#"> <i class="ti-facebook"></i> </a></li>
@@ -140,7 +140,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                            <img src=" media/img/doctor/doctor_4.png" alt="doctor">
+                            <img src="{% static 'img/doctor/doctor_4.png' %}" alt="doctor">
                             <div class="social_icon">
                                 <ul>
                                     <li><a href="#"> <i class="ti-facebook"></i> </a></li>
@@ -161,7 +161,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                            <img src="media/img/doctor/doctor_2.png" alt="doctor">
+                            <img src="{% static 'img/doctor/doctor_2.png' %}" alt="doctor">
                             <div class="social_icon">
                                 <ul>
                                     <li><a href="#"> <i class="ti-facebook"></i> </a></li>
@@ -182,7 +182,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                            <img src="media/img/doctor/doctor_3.png" alt="doctor">
+                            <img src="{% static 'img/doctor/doctor_3.png' %}" alt="doctor">
                             <div class="social_icon">
                                 <ul>
                                     <li><a href="#"> <i class="ti-facebook"></i> </a></li>
@@ -231,7 +231,7 @@
                 <!--TESTIMONIAL 1 -->
                 <div class="item">
                   <div class="shadow-effect">
-                    <img class="img-circle" src="media/img/t1.jpg" alt="">
+                    <img class="img-circle" src="{% static '/img/t1.jpg' %}" alt="">
                     <p>Had an amazing experience while using this website, great functionality</p>
                   </div>
                     <div class="testimonial-name">Jane Doe</div>
@@ -240,7 +240,7 @@
                 <!--TESTIMONIAL 2 -->
                 <div class="item">
                   <div class="shadow-effect">
-                    <img class="img-circle" src="./img/t2.jpg" alt="">
+                    <img class="img-circle" src="{% static 'img/t2.jpg' %}" alt="">
                     <p>As a doctor, the website helped me interact with the patients in a better manner </p>
                   </div>
                   <div class="testimonial-name">ANNA ITURBE</div>
@@ -249,7 +249,7 @@
                 <!--TESTIMONIAL 3 -->
                 <div class="item">
                   <div class="shadow-effect">
-                    <img class="img-circle" src="./img/t3.jpg" alt="">
+                    <img class="img-circle" src="{% static 'img/t3.jpg' %}" alt="">
                     <p>This website makes scheduling appointments easier</p>
                   </div>
                   <div class="testimonial-name">LARA ATKINSON</div>
@@ -258,7 +258,7 @@
                 <!--TESTIMONIAL 4 -->
                 <div class="item">
                   <div class="shadow-effect">
-                    <img class="img-circle" src="media/img/t4.jpg" alt="">
+                    <img class="img-circle" src="{% static 'img/t4.jpg' %}" alt="">
                     <p>The clean UI makes it easier to understand</p>
                   </div>
                   <div class="testimonial-name">IAN OWEN</div>

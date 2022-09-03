@@ -8,7 +8,7 @@
             <ul class="cards">
               <li class="cards_item">
                 <div class="card">
-                  <div class="card_image"><img src="media/img/schedule.jpg"></div>
+                  <div class="card_image"><img src="{% static 'img/schedule.jpg' %}"></div>
                   <div class="card_content">
                     <h2 class="card_title">Schedule an Appointment</h2>
                     
@@ -18,7 +18,7 @@
               </li>
               <li class="cards_item">
                 <div class="card">
-                    <div class="card_image"><img src="media/img/profile.jpg" height="300px;"></div>
+                    <div class="card_image"><img src="{% static 'img/profile.jpg' %]" height="300px;"></div>
                     <div class="card_content">
                       <h2 class="card_title">Your<br>Profile</h2>
                       
@@ -28,21 +28,21 @@
               </li>
               <li class="cards_item">
                 <div class="card">
-                    <div class="card_image"><img src="media/img/list.jpg"></div>
+                    <div class="card_image"><img src="{% static 'img/list.jpg' %}"></div>
                     <div class="card_content">
                       <h2 class="card_title">Appointment <br> List</h2>
                       
-                      <button class="btn_card card_btn">Click Here</button>
+                      <a href="{% url 'bookappointment' %}" class="btn_card card_btn">Click Here</a>
                     </div>
                   </div>
               </li>
               <li class="cards_item">
                 <div class="card">
-                    <div class="card_image"><img src="media/img/lab.jpg"></div>
+                    <div class="card_image"><img src="{% static 'img/lab.jpg' %}"></div>
                     <div class="card_content">
                       <h2 class="card_title">Lab<br>Tests</h2>
                       
-                      <button class="btn_card card_btn">Click Here</button>
+                      <a href="{% url 'lab1' %}" class="btn_card card_btn">Click Here</a>
                     </div>
                   </div>
               </li>
@@ -62,7 +62,7 @@
                   <div class="card_content">
                     <h2 class="card_title">Why<br>Us?</h2>
                     
-                    <button class="btn_card card_btn">Click Here</button>
+                    <a class="btn_card card_btn">Click Here</a>
                   </div>
                 </div>
               </li>

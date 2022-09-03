@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import PatientLoginForm
 from django.views import View
+from .models import *
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from twilio.twiml.messaging_response import MessagingResponse
@@ -59,16 +60,36 @@ def profile(request):
 def doctor(request):
     return render(request,"doctor.html")
 
-def patientLogin(request):
-    if request.method == "POST":
-        form = PatientLoginForm()
-        
-        if(form.is_valid()):
-
-            return render(request, "")
+def pregister(request):
+    if request.method == 'POST':
+        first_name = request.POST['fname']
+        last_name = request.POST['lname']
+        mobile = request.POST['mobile']
+        password = request.POST['password']
+        email = request.POST['email']
+        patient = Patient.objects.create(phoneNo=mobile,password=password, name = first_name + " " + last_name,
+                                         mail = email)
+        patient.save()
+        return redirect(request,'patientlogin.html')
     else:
-        form = PatientLoginForm()
-        return render(request, "", {"form":form})
+        return redirect(request,'patientlogin.html')
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect("home")
+        else:
+            return HttpResponse("<h1> You are not register</h1>")
+    else:
+        return render(request,'patientlogin.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('index')
 
 def getAppointments(request):
     phoneNo = 7777777777

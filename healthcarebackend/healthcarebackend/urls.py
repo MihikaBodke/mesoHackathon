@@ -18,6 +18,8 @@ from django.urls import path, include
 from healthApp.views import *
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,6 +39,10 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('profile/', profile, name='profile'),
     path('doctor/', doctor, name='doctor'),
+    path('face_mask/', include('face_app.urls'), name = 'ml'),
+    path('login/', login, name='login'),
 
-]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
+] + staticfiles_urlpatterns()
+
+# static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
