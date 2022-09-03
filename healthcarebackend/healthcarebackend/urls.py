@@ -15,14 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from healthApp import views
+from healthApp.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.index),
-    path('getAppointments/<str:phoneNo>', views.getAppointments),
-    path("scheduleAppointment/", views.scheduleAppointment),
+    path('getAppointments/<str:phoneNo>', getAppointments),
+    path("scheduleAppointment/", scheduleAppointment),
     path('',include('face_app.urls')),
+    path('lab1/', lab1, name='lab1'),
+    path('lab2/', lab2.as_view(), name='lab2'),
+    path('cart/', Cart.as_view(), name='cart'),
+    path('checkout/', CheckOut.as_view(), name='checkout'),
+    path('orders/', OrderView.as_view(), name='orders'),
+    # path('checkout/', checkout, name='checkout'),
 
-
-]
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 

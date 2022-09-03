@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from .forms import ScheduleAppointmentForm
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import PatientLoginForm
-from .models import Appointment, Patient
-from .forms import ScheduleAppointmentForm
-# Create your views here.
+from django.views import View
+from django.contrib import messages
+from .models import Hospital, Patient, Doctor, Appointment, Product, Category, Order
 
 
 
@@ -36,3 +37,90 @@ def scheduleAppointment(request):
     else:
         form = ScheduleAppointmentForm()
         return render(request, "ScheduleAppointmentForm.html", {"form":form})
+
+def appointmentList(request):
+    appointments = Appointment.objects.filter(patient=request.user)
+    return render(request, 'patient/appointment_list.html', {'appointments': appointments})
+
+
+def lab1(request):
+    return render(request, 'lab_test.html')
+
+class lab2(View):
+    def post(self, request):
+        product = request.POST.get('product')
+        remove = request.POST.get('remove')
+        cart = request.session.get('cart')
+        if cart:
+            quantity = cart.get(product)
+            if quantity:
+                if remove:
+                    if quantity <= 1:
+                        cart.pop(product)
+                    else:
+                        cart[product] = quantity - 1
+                else:
+                    cart[product] = quantity + 1
+
+            else:
+                cart[product] = 1
+        else:
+            cart = {}
+            cart[product] = 1
+
+        request.session['cart'] = cart
+        return redirect('lab2')
+
+    def get(self, request):
+        cart = request.session.get('cart')
+        if not cart:
+            request.session['cart'] = {}
+        products = None
+
+        categories = Category.get_all_categories()
+        categoryID = request.GET.get('category')
+        if categoryID:
+            products = Product.get_all_products_by_categoryid(categoryID)
+        else:
+            products = Product.get_all_products()
+
+        data = {}
+        data['products'] = products
+        data['categories'] = categories
+
+        return render(request, 'lab2.html', data)
+
+
+class CheckOut(View):
+    def post(self, request):
+        address = request.POST.get('address')
+        phone = request.POST.get('phone')
+        customer = request.POST.get('pname')
+        amount = request.POST.get('amount')
+        quantity = request.POST.get('quantity')
+        cart = request.session.get('cart')
+        products = Product.get_products_by_id(list(cart.keys()))
+
+        for product in products:
+            order = Order(customer=customer,
+                          product=product,
+                          price=amount,
+                          address=address,
+                          phone=phone,
+                          quantity=cart.get(str(product.id)))
+            order.save()
+            messages.success(request, 'Aim2Care Lab Appointment Booked. Check Your Orders for updates. ')
+        request.session['cart'] = {}
+
+        return redirect('cart')
+
+class Cart(View):
+    def get(self, request):
+        ids = list(request.session.get('cart').keys())
+        products = Product.get_products_by_id(ids)
+        return render(request, 'cart.html', {'products': products})
+
+class OrderView(View):
+    def get(self, request):
+        orders = Order.objects.filter(customer=request.user)
+        return render(request, 'orders.html', {'orders': orders})

@@ -1,8 +1,7 @@
 from django import forms
 
 # from healthcarebackend.healthApp.models import Patient
-from healthApp.models import Patient
-from healthApp.models import Appointment
+from .models import Patient, Appointment,Order
 
 
 class PatientLoginForm(forms.Form):

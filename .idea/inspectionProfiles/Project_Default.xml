@@ -1,0 +1,73 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="static" />
+            <item index="1" class="java.lang.String" itemvalue="login" />
+            <item index="2" class="java.lang.String" itemvalue="django_registration_register" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="1" class="java.lang.String" itemvalue="Pillow" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E302" />
+          <option value="W292" />
+          <option value="E128" />
+          <option value="E117" />
+          <option value="E251" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="gs1.gs1.*" />
+          <option value="api.views" />
+          <option value="gs2.gs2.urls.gs2api" />
+          <option value="crud.views" />
+          <option value="django.views.view" />
+          <option value="gs3.crud.views.*" />
+          <option value="HealthCare.HealthCare.views" />
+          <option value="health.health.*" />
+          <option value="health.*" />
+          <option value="Application_Main.Application_Main.urls.COMMON_APP" />
+          <option value="django.ModelForm" />
+          <option value="django.db.models.fields.related.OneToOneField.patient" />
+          <option value="django.widgets" />
+          <option value="account.models.options" />
+          <option value="blog.blog.urls.wordPressBlog" />
+          <option value="blog.blog.urls.include" />
+          <option value="blog.blog.urls.url" />
+          <option value="online_library.online_library.urls.library" />
+          <option value="models.User" />
+          <option value="online_library.online_library.urls.library_auth" />
+          <option value="online_library.online_library.urls.index" />
+          <option value="online_library.library_auth.forms.library_auth" />
+          <option value="django.forms.forms.ModelForm" />
+          <option value="online_library.online_library.urls.forms" />
+          <option value="django_registration.backends.activation.views.register.as_view" />
+          <option value="django.conf.urls.url" />
+          <option value="tracker.tracker.urls.track" />
+          <option value="tracker.tracker.urls.hello" />
+          <option value="tracker.track.admin.track" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
