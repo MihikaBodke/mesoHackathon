@@ -78,9 +78,9 @@
                     <td>{{forloop.counter}}</td>
                     <td><img style="height: 80px;" class="rounded-circle" src="{{product.image.url}}" alt=""></td>
                     <td>{{product.name}}</td>
-                    <td>{{product.price|currency}}</td>
-                    <td>{{product|cart_quantity:request.session.cart}}</td>
-                    <td>{{product|price_total:request.session.cart|currency}}</td>
+                    <td >{{product.price|currency}}</td>
+                    <td id = "quantity">{{product|cart_quantity:request.session.cart}}</td>
+                    <td id = "totalPrice">{{product|price_total:request.session.cart|currency}}</td>
                 </tr>
 
                 {% endfor %}
@@ -117,7 +117,7 @@
             </div>
             <div class="modal-body">
                 <div class="m-2 p-3">
-                    <form action="checkout" method="POST">
+                    <form action="https://securegw-stage.paytm.in/theia/processTransaction" method="POST">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="">Address</label>
@@ -133,7 +133,7 @@
 
                         <div class="form-group">
                             <label for="">Name of Patient</label>
-                            <input type="text" name="pname" id="" value="{{user.username}} {{product.price}}" class="form-control"
+                            <input type="text" name="pname" id="" value="{{user.username}}" class="form-control"
                                 placeholder="" aria-describedby="helpId">
 
                         </div>
@@ -144,18 +144,9 @@
                                 aria-describedby="helpId">
 
                         </div>
-                        {{product.price}}
                         <div class="form-group">
                             <label for="">Amount</label>
-                            <input type="number" name="amount" value="{{product.price}}" class="form-control"
-                                aria-describedby="helpId">
-
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Quantity</label>
-                            <input type="text" name="Quantity" id="" readonly class="form-control" placeholder=""
-                                aria-describedby="helpId">
+                            <input type="hidden" name="amount" id="amount">
 
                         </div>
 
@@ -180,15 +171,12 @@
 
                 <input type="submit" class="btn float-right btn-outline-info col-lg-6" value="Check out">
                 </form>
-                <div id="form-message-warning mt-4"></div>
-                <div id="form-message-success">
-                    Lab Appointment Booked. Check 'Your Orders' for updates.
-                </div>
-            </div>
         </div>
 
     </div>
 </div>
-
-
 {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script"anonymous"></script>
+<script>
+    $('#amount').val(document.getElementById("totalPrice").innerHTML)
+</script>

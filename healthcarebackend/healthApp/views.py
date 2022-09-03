@@ -5,6 +5,7 @@ from .forms import PatientLoginForm
 from django.views import View
 from django.contrib import messages
 from .models import Hospital, Patient, Doctor, Appointment, Product, Category, Order
+from django.views.decorators.csrf import csrf_exempt
 
 
 
@@ -91,7 +92,7 @@ class lab2(View):
         return render(request, 'lab2.html', data)
 
 
-class CheckOut(View):
+class CheckOut1(View):
     def post(self, request):
         address = request.POST.get('address')
         phone = request.POST.get('phone')
@@ -100,7 +101,6 @@ class CheckOut(View):
         quantity = request.POST.get('quantity')
         cart = request.session.get('cart')
         products = Product.get_products_by_id(list(cart.keys()))
-
         for product in products:
             order = Order(customer=customer,
                           product=product,
@@ -109,10 +109,41 @@ class CheckOut(View):
                           phone=phone,
                           quantity=cart.get(str(product.id)))
             order.save()
-            messages.success(request, 'Aim2Care Lab Appointment Booked. Check Your Orders for updates. ')
+            id = order.id
         request.session['cart'] = {}
+        param_dict = {
 
-        return redirect('cart')
+            'MID': 'xkqTxA35416233451809',
+            'ORDER_ID': str(order.id),
+            'TXN_AMOUNT': str(amount),
+            'CUST_ID': email,
+            'INDUSTRY_TYPE_ID': 'Retail',
+            'WEBSITE': 'WEBSTAGING',
+            'CHANNEL_ID': 'WEB',
+            'CALLBACK_URL': 'http://127.0.0.1:8000/shop/handlerequest/',
+
+        }
+        param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
+        return render(request, 'shop/paytm.html', {'param_dict': param_dict})
+
+@csrf_exempt
+def handlerequest(request):
+    # paytm will send you post request here
+    form = request.POST
+    response_dict = {}
+    for i in form.keys():
+        response_dict[i] = form[i]
+        if i == 'CHECKSUMHASH':
+            checksum = form[i]
+
+    verify = Checksum.verify_checksum(response_dict, MERCHANT_KEY, checksum)
+    if verify:
+        if response_dict['RESPCODE'] == '01':
+            print('order successful')
+        else:
+            print('order was not successful because' + response_dict['RESPMSG'])
+    return render(request, 'paymentstatus.html', {'response': response_dict})
+
 
 class Cart(View):
     def get(self, request):
