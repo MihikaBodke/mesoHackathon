@@ -95,6 +95,7 @@ def getAppointments(request):
     phoneNo = 7777777777
     patient = Patient.objects.get(phoneNo = phoneNo)
     appointments = Appointment.objects.get(patient = patient)
+    return render(request, "appointment_list.html", {})
     return HttpResponse(appointments)
 
 
