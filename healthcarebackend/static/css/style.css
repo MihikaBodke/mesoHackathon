@@ -6291,10 +6291,11 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .mainform{
-	position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -30%);
+
 
 	width: 750px;
 	height: 650px;

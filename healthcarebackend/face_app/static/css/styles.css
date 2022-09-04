@@ -48,6 +48,7 @@
   box-sizing: border-box;
 }
 
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -266,6 +267,10 @@ select {
   word-wrap: normal;
 }
 
+
+.if{
+  color: black;
+}
 button,
 [type=button],
 [type=reset],

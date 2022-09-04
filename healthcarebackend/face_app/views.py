@@ -30,6 +30,8 @@ def user_input(requests):
             output_path = os.path.join(BASE_DIR,'images_output/') + str(form.cleaned_data['img_input'])
             
             pro_img,count,with_mask,without_mask = predict_v2(input_path,output_path,form)
+            return render(requests, "verified.html")
+            return HttpResponse(str(count) +" number of people detected. "+str(with_mask) +" number of people are wearing masks." + "Verified" if with_mask >= 1 else " Please wear masks first.")
             return render(requests,'face_app/result.html',{'processed_img':pro_img , 'count':count,'with_mask':with_mask,'without_mask':without_mask})
             # return HttpResponse('image uploaded')
     else:

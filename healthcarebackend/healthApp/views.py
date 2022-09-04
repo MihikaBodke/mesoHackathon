@@ -61,18 +61,7 @@ def doctor(request):
     return render(request,"doctor.html")
 
 def pregister(request):
-    if request.method == 'POST':
-        first_name = request.POST['fname']
-        last_name = request.POST['lname']
-        mobile = request.POST['mobile']
-        password = request.POST['password']
-        email = request.POST['email']
-        patient = Patient.objects.create(phoneNo=mobile,password=password, name = first_name + " " + last_name,
-                                         mail = email)
-        patient.save()
-        return redirect(request,'patientlogin.html')
-    else:
-        return redirect(request,'patientlogin.html')
+    return redirect(request,'patientlogin.html')
 
 def login(request):
     if request.method == 'POST':
@@ -225,3 +214,7 @@ class OrderView(View):
     def get(self, request):
         orders = Order.objects.filter(customer=request.user)
         return render(request, 'orders.html', {'orders': orders})
+
+def verified(request):
+
+    return render(request, "verified.html")

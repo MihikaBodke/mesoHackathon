@@ -2,6 +2,13 @@
 {% load static %}
 {% block title %}LogIn {% endblock %}
 {% block content %}
+<head>
+	<style>
+		.if{
+  color: black;
+}
+	</style>
+</head>
 <body class="body_img">
 	<img src="{% static 'img/about_bg.png' %}">
 	<div class="mainform" >  	
@@ -9,17 +16,17 @@
 
 			<div class="signup">
 				
-				<form>
+				<form action="{% url 'home' %}">
 					
 					<label for="chk" aria-hidden="true">Patient Sign up</label>
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<input type="text" class ="ageclass" name="age" placeholder="Age" required="" >
-					<input type="text" name="gender" placeholder="Gender" required="">
-					<input type="text" name="bg" placeholder="Blood Group" required="">
+					<input class="if" type="text" name="email" placeholder="Email" required="">
+					<input class="if" type="text" name="pswd" placeholder="Password" required="">
+					<input class="if" type="text" class ="ageclass" name="age" placeholder="Age" required="" >
+					<input class="if" type="text" name="gender" placeholder="Gender" required="">
+					<input class="if" type="text" name="bg" placeholder="Blood Group" required="">
 
 					<input type="text" name="Past Allergies" placeholder="Past allergies" required="">
-					<button class="subbtn">Sign up</button>
+					<a href="{% url 'home' %}"><button class="subbtn">Sign up</button></a>
 				</form>
 			</div>
 

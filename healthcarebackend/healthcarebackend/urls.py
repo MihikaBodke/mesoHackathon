@@ -34,14 +34,14 @@ urlpatterns = [
     path('checkout/', CheckOut1.as_view(), name='checkout'),
     path('orders/', OrderView.as_view(), name='orders'),
     path('handle_request/', handlerequest, name='handlerequest'),
-    path('home/', landing, name='landing'),
+    path('home/', landing, name='home'),
     path('aboutus/', about, name='about'),
     path('contact/', contact, name='contact'),
     path('profile/', profile, name='profile'),
     path('doctor/', doctor, name='doctor'),
-    path('face_mask/', include('face_app.urls'), name = 'ml'),
+    path('face_mask/', include('face_app.urls'), name = 'face_detection'),
     path('login/', login, name='login'),
-
+    path("verified/", verified, name="verified",)
 
 ] + staticfiles_urlpatterns()
 

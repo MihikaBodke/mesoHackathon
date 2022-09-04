@@ -48,6 +48,9 @@
                                 <li class="nav-item active">
                                     <a class="nav-link" href="{% url 'index' %}">Home</a>
                                 </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'image_upload' %}">Face Detection</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'about' %}">about</a>
                                 </li>
@@ -64,7 +67,10 @@
                         <div>
                             <ul>
                             <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                                  <a class="nav-link" style ="color: black;" href="{% url 'login' %}">
+                                  Login
+                                </a>
+                                
                                 </li>
                             </ul>
                             </div>
@@ -170,7 +176,7 @@
                 items: 3,
                 margin: 0,
                 autoplay: true,
-                dots:true,
+                dots:false,
                 autoplayTimeout: 8500,
                 smartSpeed: 450,
                 responsive: {
