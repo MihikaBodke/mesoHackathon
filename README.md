@@ -1,0 +1,1 @@
+This project aims to streamline the healthcare process, facilitating doctor selection, appointment scheduling, and patient record maintenance. Leveraging advanced technologies such as NLP, Django, PyTorch, OpenCV, Pandas, HTML, CSS, and JavaScript, the application enhances efficiency and user experience in healthcare management.
